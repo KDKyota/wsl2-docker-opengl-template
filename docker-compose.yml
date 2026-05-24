@@ -1,0 +1,18 @@
+services:
+  opengl-dev:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    network_mode: "host"
+    user: ${USER_ID}:${GROUP_ID}
+    environment:
+      DISPLAY: $DISPLAY
+    volumes:
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
+      - type: bind
+        source: .
+        target: /workspace
+    working_dir: /workspace
