@@ -19,6 +19,8 @@ RUN apt-get update && \
     libxinerama-dev \
     libxcursor-dev \
     libxi-dev \
+    libglib2.0-dev \
+    pkg-config \
     # あると便利
     gdb \
     make && \
